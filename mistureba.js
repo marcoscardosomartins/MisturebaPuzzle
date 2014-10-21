@@ -1554,11 +1554,11 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 			context.gotoAndPlay("instrucoes");
 			
 			if (context.enableSounds)
-				playAudio("click");
+				playSound("click");
 		}
 		
 		// added for phonegap
-		function playAudio(url) {
+		/*function playAudio(url) {
 		    // Play the audio file at url
 		    var my_media = new Media(url,
 		        // success callback
@@ -1572,7 +1572,7 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 		    );
 		    // Play audio
 		    my_media.play();
-		}
+		}*/
 		
 		this.gotoLevel = function(event)
 		{
