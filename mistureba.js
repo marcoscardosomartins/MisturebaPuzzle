@@ -1709,10 +1709,10 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 			var ow = 550; // your stage width
 			var oh = 960; // your stage height
 			
-			if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
+			/*if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
 				keepAspectRatio = false;
 			else 
-				keepAspectRatio = true;
+				keepAspectRatio = true;*/
 			
 			if (keepAspectRatio)
 			{
