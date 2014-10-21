@@ -1542,6 +1542,9 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 		
 		this.qtd = 0;
 		
+		if (createjs.Touch.isSupported())
+			this.audioComponent.visible = false;
+		
 		this.jogarHandler = function(event)
 		{
 			btjogar.clickCont++;
