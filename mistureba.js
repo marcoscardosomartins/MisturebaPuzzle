@@ -1557,7 +1557,7 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 			context.gotoAndPlay("instrucoes");
 			
 			if (context.enableSounds)
-				createjs.Sound.play("click"); //playSound("click");
+				document.getElementById("click").play();//createjs.Sound.play("click"); //playSound("click");
 		}
 		
 		// added for phonegap
