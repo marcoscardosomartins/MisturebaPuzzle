@@ -1771,6 +1771,7 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 	// fullscreen
 	this.fullscreenSwitch = new lib.fullscreenButton();
 	this.fullscreenSwitch.setTransform(40.6,47.2,1.547,1.546);
+	this.fullscreenSwitch.visible = false;
 
 	this.timeline.addTween(cjs.Tween.get(this.fullscreenSwitch).wait(120));
 
