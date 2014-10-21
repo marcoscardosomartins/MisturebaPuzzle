@@ -1538,15 +1538,6 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 		var game3 = this.game3;
 		var game4 = this.game4;
 		
-		var click = new Media("file://android_asset/www/sounds/click.mp3", 
-				function () {
-		            console.log("playAudio():Audio Success");
-		        },
-		        // error callback
-		        function (err) {
-		            console.log("playAudio():Audio Error: " + err);
-		        });
-		
 		var bg = this.bg;
 		
 		this.qtd = 0;
@@ -1565,9 +1556,9 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 			btjogar.gotoAndPlay("s1");
 			context.gotoAndPlay("instrucoes");
 			
-			click.play();
-			/*if (context.enableSounds)
-				playSound("click"); //document.getElementById("click").play();//createjs.Sound.play("click");*/
+			//click.play();
+			if (context.enableSounds)
+				playSound("click"); //document.getElementById("click").play();//createjs.Sound.play("click");
 		}
 		
 		// added for phonegap
