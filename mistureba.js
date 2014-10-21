@@ -1557,6 +1557,23 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 				playAudio("click");
 		}
 		
+		// added for phonegap
+		function playAudio(url) {
+		    // Play the audio file at url
+		    var my_media = new Media(url,
+		        // success callback
+		        function () {
+		            console.log("playAudio():Audio Success");
+		        },
+		        // error callback
+		        function (err) {
+		            console.log("playAudio():Audio Error: " + err);
+		        }
+		    );
+		    // Play audio
+		    my_media.play();
+		}
+		
 		this.gotoLevel = function(event)
 		{
 			btcontinuar.clickCont++;
