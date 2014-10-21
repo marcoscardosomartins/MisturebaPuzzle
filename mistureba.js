@@ -1692,7 +1692,7 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 		
 		fullscreenSwitch.on("click", this.fullscreenHandler);
 		
-		var keepAspectRatio = true;
+		var keepAspectRatio = false;
 		
 		window.onresize = function()
 		{
