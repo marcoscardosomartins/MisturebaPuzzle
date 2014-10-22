@@ -11,9 +11,9 @@ lib.properties = {
 	manifest: [
 		{src:"images/cnec.png", id:"cnec"},
 		{src:"images/noas.png", id:"noas"},
-		{src:"sounds/click.ogg", id:"click"},
-		{src:"sounds/music.ogg", id:"music"},
-		{src:"sounds/sword.ogg", id:"sword"}
+		{src:"sounds/click.mp3", id:"click"},
+		{src:"sounds/music.mp3", id:"music"},
+		{src:"sounds/sword.mp3", id:"sword"}
 	]
 };
 
@@ -1429,8 +1429,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,550,70);
 
 	// timeline functions:
 	this.frame_0 = function() {
-		var music = playSound("music", 1000);
-		music.setVolume(0.5);
+		//var music = playSound("music", 1000);
+		//music.setVolume(0.5);
 		
 		//var music = document.getElementById('music');
 		//music.volume = 0.5;
@@ -1561,25 +1561,8 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 			
 			//click.play();
 			if (context.enableSounds)
-				playSound("click"); //document.getElementById("click").play();//createjs.Sound.play("click");
+				playAudio('/android_asset/www/sounds/click.ogg');//playSound("click"); //document.getElementById("click").play();//createjs.Sound.play("click");
 		}
-		
-		// added for phonegap
-		/*function playAudio(url) {
-		    // Play the audio file at url
-		    var my_media = new Media(url,
-		        // success callback
-		        function () {
-		            console.log("playAudio():Audio Success");
-		        },
-		        // error callback
-		        function (err) {
-		            console.log("playAudio():Audio Error: " + err);
-		        }
-		    );
-		    // Play audio
-		    my_media.play();
-		}*/
 		
 		this.gotoLevel = function(event)
 		{
@@ -1733,10 +1716,10 @@ p.nominalBounds = new cjs.Rectangle(-55.6,-32.3,71.8,49.8);
 			var ow = 550; // your stage width
 			var oh = 960; // your stage height
 			
-			/*if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
+			if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
 				keepAspectRatio = false;
 			else 
-				keepAspectRatio = true;*/
+				keepAspectRatio = true;
 			
 			if (keepAspectRatio)
 			{

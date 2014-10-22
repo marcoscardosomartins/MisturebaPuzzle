@@ -9,7 +9,6 @@
 <script src="http://code.createjs.com/movieclip-0.7.1.min.js"></script>
 <script src="http://code.createjs.com/preloadjs-0.4.1.min.js"></script>
 <script src="http://code.createjs.com/soundjs-0.5.2.min.js"></script>
-<script src="http://debug-software.intel.com/target/target-script-min.js#bmLAp_3CB4F9zqd177B_co5yyfaTG8uhD7pA5ULuMWI"></script>
 <script src="mistureba.js"></script>
 <style type="text/css">
     /* Remove margins and HTML scrollbars */
@@ -76,6 +75,9 @@ function handleComplete()
     fpsLabel = new createjs.Text("-- fps", "bold 18px Arial", "#FFF");
     //stage.addChild(fpsLabel);
     
+    //createjs.FlashPlugin.swfPath = "src/soundjs/";
+    //createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.HTMLAudioPlugin, createjs.FlashPlugin]);
+    
 	createjs.Ticker.setFPS(lib.properties.fps);
 	createjs.Ticker.addEventListener("tick", tick);  
 }
@@ -90,18 +92,27 @@ function playSound(id, loop) {
 	return createjs.Sound.play(id, createjs.Sound.INTERRUPT_EARLY, 0, 0, loop);
 }
 
+// to call this function use like this playAudio('/android_asset/www/audio/basic/yes.mp3');
+function playAudio(url) {
+    // Play the audio file at url
+    var my_media = new Media(url,
+        // success callback
+        function() {
+            console.log("playAudio():Audio Success");
+        },
+        // error callback
+        function(err) {
+            console.log("playAudio():Audio Error: "+err);
+    });
+
+    // Play audio
+    my_media.play();
+}
+    
 </script>
 </head>
 
 <body onload="init();" style="background-color:#FFFFFF">
 	<canvas id="canvas" width="550" height="960" style="background-color:#FFFFFF"></canvas>
-    <!--<audio id="music" preload="auto" autoplay loop>
-        <source src="sounds/music.mp3" type="audio/mpeg">
-        <source src="sounds/music.ogg" type="audio/ogg">
-    </audio>
-    <audio id="click" preload="auto">
-        <source src="sounds/click.mp3" type="audio/mpeg">
-        <source src="sounds/click.ogg" type="audio/ogg">
-    </audio>-->
 </body>
 </html>
