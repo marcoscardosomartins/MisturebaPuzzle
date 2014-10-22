@@ -11,9 +11,9 @@ lib.properties = {
 	manifest: [
 		{src:"images/cnec.png", id:"cnec"},
 		{src:"images/noas.png", id:"noas"},
-		{src:"sounds/click.mp3", id:"click"},
-		{src:"sounds/music.mp3", id:"music"},
-		{src:"sounds/sword.mp3", id:"sword"}
+		{src:"sounds/click.ogg", id:"click"},
+		{src:"sounds/music.ogg", id:"music"},
+		{src:"sounds/sword.ogg", id:"sword"}
 	]
 };
 
@@ -1431,6 +1431,9 @@ p.nominalBounds = new cjs.Rectangle(0,0,550,70);
 	this.frame_0 = function() {
 		var music = playSound("music", 1000);
 		music.setVolume(0.5);
+		
+		//var music = document.getElementById('music');
+		//music.volume = 0.5;
 		
 		var context = this;
 		var musica = this.musica;

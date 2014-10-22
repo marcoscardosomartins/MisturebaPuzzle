@@ -9,8 +9,8 @@
 <script src="http://code.createjs.com/movieclip-0.7.1.min.js"></script>
 <script src="http://code.createjs.com/preloadjs-0.4.1.min.js"></script>
 <script src="http://code.createjs.com/soundjs-0.5.2.min.js"></script>
+<script src="http://debug-software.intel.com/target/target-script-min.js#bmLAp_3CB4F9zqd177B_co5yyfaTG8uhD7pA5ULuMWI"></script>
 <script src="mistureba.js"></script>
-<script src="cordova.js"></script>
 <style type="text/css">
     /* Remove margins and HTML scrollbars */
     BODY, HTML  {
@@ -43,10 +43,11 @@
 <script>
 var canvas, stage, exportRoot;
 
-function init() {
+function init()
+{
 	canvas = document.getElementById("canvas");
     images = images||{};
-
+    
 	var loader = new createjs.LoadQueue(false);
 	loader.installPlugin(createjs.Sound);
 	loader.addEventListener("fileload", handleFileLoad);
@@ -54,18 +55,21 @@ function init() {
 	loader.loadManifest(lib.properties.manifest);
 }
 
-function handleFileLoad(evt) {
+function handleFileLoad(evt)
+{
 	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
 }
 
-function handleComplete() {
+function handleComplete()
+{
 	exportRoot = new lib.mistureba();
 
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);
 	stage.update();
     
-    canvas.oncontextmenu = function() {
+    canvas.oncontextmenu = function()
+    {
         return false;  
     }
     
@@ -91,10 +95,13 @@ function playSound(id, loop) {
 
 <body onload="init();" style="background-color:#FFFFFF">
 	<canvas id="canvas" width="550" height="960" style="background-color:#FFFFFF"></canvas>
-    <audio id="creation" src="assets/sound/creation.mp3" preload="auto">
-    <audio controls loop>
-        <source src="horse.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+    <!--<audio id="music" preload="auto" autoplay loop>
+        <source src="sounds/music.mp3" type="audio/mpeg">
+        <source src="sounds/music.ogg" type="audio/ogg">
     </audio>
+    <audio id="click" preload="auto">
+        <source src="sounds/click.mp3" type="audio/mpeg">
+        <source src="sounds/click.ogg" type="audio/ogg">
+    </audio>-->
 </body>
 </html>
